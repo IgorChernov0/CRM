@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.props" Condition="Exists('..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.props')" />
+  <Import Project="..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.props" Condition="Exists('..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.props')" />
+  <Import Project="..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.props" Condition="Exists('..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6E241DF2-7AC6-4AFC-A10C-031E663AB6E6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CrmUI</RootNamespace>
+    <AssemblyName>CrmUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Consul, Version=0.7.2.6, Culture=neutral, PublicKeyToken=20a6ad9a81df1d95, processorArchitecture=MSIL">
+      <HintPath>..\packages\Consul.0.7.2.6\lib\net45\Consul.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=5.1.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.5.1.2\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Catalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Catalog.Designer.cs">
+      <DependentUpon>Catalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CommissionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CommissionForm.Designer.cs">
+      <DependentUpon>CommissionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GroupForm.Designer.cs">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inputs\Group2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inputs\Group2Form.Designer.cs">
+      <DependentUpon>Group2Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inputs\InputNavantazhennyaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inputs\InputNavantazhennyaForm.Designer.cs">
+      <DependentUpon>InputNavantazhennyaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inputs\InputZnattyaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inputs\InputZnattyaForm.Designer.cs">
+      <DependentUpon>InputZnattyaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inputs\OblicTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inputs\OblicTeacher.Designer.cs">
+      <DependentUpon>OblicTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inputs\VykComission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inputs\VykComission.Designer.cs">
+      <DependentUpon>VykComission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\SubjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubjectForm.Designer.cs">
+      <DependentUpon>SubjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TeacherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TeacherForm.Designer.cs">
+      <DependentUpon>TeacherForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inputs\CvartalInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inputs\CvartalInput.Designer.cs">
+      <DependentUpon>CvartalInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\ComForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\ComForm.Designer.cs">
+      <DependentUpon>ComForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\Cvartal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\Cvartal.Designer.cs">
+      <DependentUpon>Cvartal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\NavantazhennyaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\NavantazhennyaForm.Designer.cs">
+      <DependentUpon>NavantazhennyaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inputs\Planavoe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inputs\Planavoe.Designer.cs">
+      <DependentUpon>Planavoe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\OblicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\OblicForm.Designer.cs">
+      <DependentUpon>OblicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\PlanoveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\PlanoveForm.Designer.cs">
+      <DependentUpon>PlanoveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\Second.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\Second.Designer.cs">
+      <DependentUpon>Second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\ZnattyaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\ZnattyaForm.Designer.cs">
+      <DependentUpon>ZnattyaForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Catalog.resx">
+      <DependentUpon>Catalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CommissionForm.resx">
+      <DependentUpon>CommissionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GroupForm.resx">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inputs\Group2Form.resx">
+      <DependentUpon>Group2Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inputs\InputNavantazhennyaForm.resx">
+      <DependentUpon>InputNavantazhennyaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inputs\InputZnattyaForm.resx">
+      <DependentUpon>InputZnattyaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inputs\OblicTeacher.resx">
+      <DependentUpon>OblicTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inputs\VykComission.resx">
+      <DependentUpon>VykComission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\SubjectForm.resx">
+      <DependentUpon>SubjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TeacherForm.resx">
+      <DependentUpon>TeacherForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inputs\CvartalInput.resx">
+      <DependentUpon>CvartalInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\ComForm.resx">
+      <DependentUpon>ComForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\Cvartal.resx">
+      <DependentUpon>Cvartal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\NavantazhennyaForm.resx">
+      <DependentUpon>NavantazhennyaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inputs\Planavoe.resx">
+      <DependentUpon>Planavoe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\OblicForm.resx">
+      <DependentUpon>OblicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\PlanoveForm.resx">
+      <DependentUpon>PlanoveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\Second.resx">
+      <DependentUpon>Second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\ZnattyaForm.resx">
+      <DependentUpon>ZnattyaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Crmlog\Crmlog.csproj">
+      <Project>{d63c87e8-4ba4-4120-9763-b6bb55a3b499}</Project>
+      <Name>Crmlog</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.targets" Condition="Exists('..\packages\Microsoft.Build.Tasks.Git.1.0.0\build\Microsoft.Build.Tasks.Git.targets')" />
+  <Import Project="..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.targets" Condition="Exists('..\packages\Microsoft.SourceLink.Common.1.0.0\build\Microsoft.SourceLink.Common.targets')" />
+  <Import Project="..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.targets" Condition="Exists('..\packages\Microsoft.SourceLink.GitHub.1.0.0\build\Microsoft.SourceLink.GitHub.targets')" />
+</Project>
